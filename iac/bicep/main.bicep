@@ -6,7 +6,7 @@ targetScope = 'subscription'
 param dprg string= 'rg-wwe-ict-fabric-accellerator'
 
 @description('Resource group location')
-param rglocation string = 'westeurope'
+param rglocation string = 'northeurope'
 
 @description('Cost Centre tag that will be applied to all resources in this deployment')
 param cost_centre_tag string = 'INTERNAL'
@@ -141,7 +141,7 @@ module fabric_capacity './modules/fabric-capacity.bicep' = {
   name: fabric_deployment_name
   scope: fabric_rg
   params:{
-    fabric_name: 'fc-wwe-ict-01'
+    fabric_name: 'fcwweict01'
     location: fabric_rg.location
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
