@@ -27,7 +27,7 @@ param create_purview bool = true
 param enable_purview bool = true
 
 @description('Resource group where Purview will be deployed. Resource group will be created if it doesnt exist')
-param purviewrg string= 'rg-wwe-ictd-fabric-accellerator'
+param purviewrg string= 'rg-wwe-ictd-fabric-accellerator-purview'
 
 @description('Location of Purview')
 param purview_location string= 'westeurope'
@@ -39,7 +39,7 @@ param purview_name string = 'FabricDG'
 param enable_audit bool = true
 
 @description('Resource group where audit resources will be deployed if enabled. Resource group will be created if it doesnt exist')
-param auditrg string= 'rg-wwe-ictd-fabric-accellerator'
+param auditrg string= 'rg-wwe-ictd-fabric-accellerator-audit'
 
 
 // Variables
