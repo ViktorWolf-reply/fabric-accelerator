@@ -46,8 +46,8 @@ param audit_storage_name string
 param auditrg string
 
 // Variables
-var suffix = uniqueString(resourceGroup().id)
-var sqlserver_unique_name = '${sqlserver_name}-${suffix}'
+//var suffix = uniqueString(resourceGroup().id)
+var sqlserver_unique_name = sqlserver_name
 
 // Deploy SQL Server
 resource sqlserver 'Microsoft.Sql/servers@2023-08-01-preview' ={

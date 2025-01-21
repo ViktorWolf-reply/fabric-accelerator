@@ -31,9 +31,9 @@ param audit_storage_sku string ='Standard_LRS'
 param audit_loganalytics_name string
 
 // Variables
-var suffix = uniqueString(resourceGroup().id)
-var audit_storage_uniquename = substring('${audit_storage_name}${suffix}',0,24)
-var audit_loganalytics_uniquename = '${audit_loganalytics_name}-${suffix}'
+//var suffix = uniqueString(resourceGroup().id)
+var audit_storage_uniquename = audit_storage_name
+var audit_loganalytics_uniquename = audit_loganalytics_name
 
 // Create a Storage Account for Audit Logs
 resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {

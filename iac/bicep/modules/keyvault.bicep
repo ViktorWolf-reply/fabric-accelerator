@@ -25,8 +25,7 @@ param purviewrg string
 param enable_purview bool=true
 
 // Variables
-var suffix = uniqueString(resourceGroup().id)
-var keyvault_uniquename = '${keyvault_name}-${suffix}'
+var keyvault_uniquename = keyvault_name
 
 
 // Create Key Vault

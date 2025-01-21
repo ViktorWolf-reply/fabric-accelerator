@@ -130,9 +130,9 @@ module audit_integration './modules/audit.bicep' = if(enable_audit) {
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
     sme_tag: sme_tag
-    audit_storage_name: 'sg-wwe-ict-fabricaudit-01'
+    audit_storage_name: 'sgwweictfabricaudit01'
     audit_storage_sku: 'Standard_LRS'    
-    audit_loganalytics_name: 'la-wwe-ictd-fabricaudit-01'
+    audit_loganalytics_name: 'la-wwe-ict-fabricaudit-01'
   }
 }
 
@@ -155,7 +155,7 @@ module controldb './modules/sqldb.bicep' = {
   name: controldb_deployment_name
   scope: fabric_rg
   params:{
-     sqlserver_name: 'srv-wwe-ict-fabricsqlsrv-01'
+     sqlserver_name: 'srv-wwei-ct-fabricsqlsrv-01'
      database_name: 'controlDB' 
      location: fabric_rg.location
      cost_centre_tag: cost_centre_tag
