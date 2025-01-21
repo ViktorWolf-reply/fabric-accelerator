@@ -27,7 +27,7 @@ param create_purview bool = true
 param enable_purview bool = true
 
 @description('Resource group where Purview will be deployed. Resource group will be created if it doesnt exist')
-param purviewrg string= 'rg-wwe-ictd-fabric-accellerator-purview'
+param purviewrg string= 'rg-wwe-ict-fabric-accellerator-purview'
 
 @description('Location of Purview')
 param purview_location string= 'westeurope'
@@ -39,7 +39,7 @@ param purview_name string = 'FabricDG'
 param enable_audit bool = true
 
 @description('Resource group where audit resources will be deployed if enabled. Resource group will be created if it doesnt exist')
-param auditrg string= 'rg-wwe-ictd-fabric-accellerator-audit'
+param auditrg string= 'rg-wwe-ict-fabric-accellerator-audit'
 
 
 // Variables
@@ -106,7 +106,7 @@ module kv './modules/keyvault.bicep' = {
   scope: fabric_rg
   params:{
      location: fabric_rg.location
-     keyvault_name: 'kv-wwe-ict-fabric-0001'
+     keyvault_name: 'kv-wwe-ict-fabric-01'
      cost_centre_tag: cost_centre_tag
      owner_tag: owner_tag
      sme_tag: sme_tag
@@ -130,9 +130,9 @@ module audit_integration './modules/audit.bicep' = if(enable_audit) {
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
     sme_tag: sme_tag
-    audit_storage_name: 'sg-wwe-ict-fabricaudit-0001'
+    audit_storage_name: 'sg-wwe-ict-fabricaudit-01'
     audit_storage_sku: 'Standard_LRS'    
-    audit_loganalytics_name: 'la-wwe-ictd-fabricaudit-0001'
+    audit_loganalytics_name: 'la-wwe-ictd-fabricaudit-01'
   }
 }
 
@@ -141,7 +141,7 @@ module fabric_capacity './modules/fabric-capacity.bicep' = {
   name: fabric_deployment_name
   scope: fabric_rg
   params:{
-    fabric_name: 'fc-wwe-ict-0001'
+    fabric_name: 'fc-wwe-ict-01'
     location: fabric_rg.location
     cost_centre_tag: cost_centre_tag
     owner_tag: owner_tag
@@ -155,7 +155,7 @@ module controldb './modules/sqldb.bicep' = {
   name: controldb_deployment_name
   scope: fabric_rg
   params:{
-     sqlserver_name: 'srv-wwe-ict-fabricsqlsrv-0001'
+     sqlserver_name: 'srv-wwe-ict-fabricsqlsrv-01'
      database_name: 'controlDB' 
      location: fabric_rg.location
      cost_centre_tag: cost_centre_tag
